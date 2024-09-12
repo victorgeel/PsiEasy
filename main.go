@@ -17,12 +17,12 @@ import (
 )
 
 const (
-	appName        = "PSIPHON LAZY"
-	appVersionName = "NEW VERSION"
-	appVersionCode = "0"
+	appName        = "∆ Psiphon ∆"
+	appVersionName = "∆ New ∆"
+	appVersionCode = "1.11.0"
 
-	copyrightYear   = "2025"
-	copyrightAuthor = "VICTOR always LAZY"
+	copyrightYear   = "••2025••"
+	copyrightAuthor = "® VICTOR © LAZY ®"
 )
 
 var (
@@ -56,7 +56,7 @@ func main() {
 			fmt.Sprintf("%s [%s Version. %s]", appName, appVersionName, appVersionCode),
 			fmt.Sprintf("(c) %s %s.", copyrightYear, copyrightAuthor),
 		},
-		liblog.Colors["Y1"],
+		liblog.Colors["W1"],
 	)
 
 	config := new(Config)
@@ -74,13 +74,14 @@ func main() {
 			"cdn.web.moontontech.com",
 			"hok.intlgame.com",
 			"dycntw-inapps.appsflyersdk.com",    
-	},		
+	        },		
 		"fastly.net:443": []string{
                         "nstld.verisign-grs.com:443",
-                        "a.root-servers.net:443"
+                        "a.root-servers.net:443",
+		},	
     
 		
-	},
+	}
 	defaultConfig.Inject.Payload = ""
 	defaultConfig.Inject.Timeout = 5
 	defaultConfig.PsiphonCore = 2
@@ -144,8 +145,8 @@ func main() {
 
 	time.Sleep(200 * time.Millisecond)
 
-	liblog.LogInfo("Domain Fronting running on port "+Inject.Config.Port, "INFO", liblog.Colors["P1"])
-	liblog.LogInfo("Proxy Rotator running on port "+ProxyRotator.Config.Port, "INFO", liblog.Colors["G1"])
+	liblog.LogInfo("Domain Fronting running on port "+Inject.Config.Port, "INFO", liblog.Colors["Y1"])
+	liblog.LogInfo("Proxy Rotator running on port "+ProxyRotator.Config.Port, "INFO", liblog.Colors["P1"])
 
 	if _, err := os.Stat(libutils.RealPath(config.Psiphon.CoreName)); os.IsNotExist(err) {
 		liblog.LogInfo(
@@ -156,7 +157,7 @@ func main() {
 					"|\n",
 				config.Psiphon.CoreName,
 			),
-			"INFO", liblog.Colors["R1"],
+			"INFO", liblog.Colors["G1"],
 		)
 		return
 	}
