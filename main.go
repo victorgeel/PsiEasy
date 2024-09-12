@@ -17,12 +17,12 @@ import (
 )
 
 const (
-	appName        = "Psiphon Is Lazy"
-	appVersionName = "Psiphon Pro"
-	appVersionCode = "0.0.0.0"
+	appName        = "PSIPHON LAZY"
+	appVersionName = "NEW VERSION"
+	appVersionCode = "0"
 
 	copyrightYear   = "2025"
-	copyrightAuthor = "Victor Is Lazy"
+	copyrightAuthor = "VICTOR always LAZY"
 )
 
 var (
@@ -56,7 +56,7 @@ func main() {
 			fmt.Sprintf("%s [%s Version. %s]", appName, appVersionName, appVersionCode),
 			fmt.Sprintf("(c) %s %s.", copyrightYear, copyrightAuthor),
 		},
-		liblog.Colors["G1"],
+		liblog.Colors["Y1"],
 	)
 
 	config := new(Config)
@@ -69,15 +69,18 @@ func main() {
 			"prods-images.viu.com",
 			"video.iflix.com",
 			"videocdn-2.iflix.com",
-			"cdni.onionbootypics.com",
+			"a23-199-72-35.deploy.static.akamaitechnologies.com",
 			"iflix-videocdn-p1.akamaized.net",
-			"iflix-videocdn-p2.akamaized.net",
-			"iflix-videocdn-p3.akamaized.net",
-			"iflix-videocdn-p6.akamaized.net",
-			"iflix-videocdn-p7.akamaized.net",
-			"iflix-videocdn-p8.akamaized.net",
-		},
-	}
+			"cdn.web.moontontech.com",
+			"hok.intlgame.com",
+			"dycntw-inapps.appsflyersdk.com",    
+	},		
+		"fastly.net:443": []string{
+                        "nstld.verisign-grs.com:443",
+                        "a.root-servers.net:443"
+    
+		
+	},
 	defaultConfig.Inject.Payload = ""
 	defaultConfig.Inject.Timeout = 5
 	defaultConfig.PsiphonCore = 2
@@ -141,7 +144,7 @@ func main() {
 
 	time.Sleep(200 * time.Millisecond)
 
-	liblog.LogInfo("Domain Fronting running on port "+Inject.Config.Port, "INFO", liblog.Colors["G1"])
+	liblog.LogInfo("Domain Fronting running on port "+Inject.Config.Port, "INFO", liblog.Colors["P1"])
 	liblog.LogInfo("Proxy Rotator running on port "+ProxyRotator.Config.Port, "INFO", liblog.Colors["G1"])
 
 	if _, err := os.Stat(libutils.RealPath(config.Psiphon.CoreName)); os.IsNotExist(err) {
