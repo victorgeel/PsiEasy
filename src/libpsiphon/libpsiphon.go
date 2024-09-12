@@ -9,6 +9,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"github.com/aztecrabbit/liblog"
+	"github.com/aztecrabbit/libproxyrotator"
+	"github.com/aztecrabbit/libutils"
 )
 
 var (
